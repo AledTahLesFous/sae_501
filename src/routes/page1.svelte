@@ -27,7 +27,7 @@
   .femme {
     position: absolute;
     top: 20%;
-    left: 60%;
+    left: 41%;
     cursor: pointer;
     transition: transform 0.3s ease;
     border: 10px solid white;
