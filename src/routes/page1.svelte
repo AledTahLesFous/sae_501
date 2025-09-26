@@ -9,30 +9,31 @@
 
 <style>
 
-
-  main {
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    position: relative;
   }
 
   .background img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* cover = remplissage sans déformation visible */
+    display: block;
   }
 
-.femme {
-  position: absolute;
-  top: 400px;
-  left: 850px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  border: 10px solid white;
-  background: none;
-  border: 10px solid white;
-  padding: 0;
-}
+  .femme {
+    position: absolute;
+    top: 400px;
+    left: 850px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: 10px solid white;
+    background: none;
+    padding: 0;
+  }
 
   .femme:hover {
     transform: scale(1.1);
@@ -44,8 +45,7 @@
     <img src={Back} alt="background" />
   </div>
 
-<button class="femme" on:click={handleClick} type="button">
-  <img src={Femme} alt="femme" />
-</button>
-
+  <button class="femme" on:click={handleClick} type="button">
+    <img src={Femme} alt="femme" />
+  </button>
 </main>
