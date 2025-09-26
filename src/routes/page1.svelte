@@ -8,41 +8,72 @@
 </script>
 
 <style>
-
   .background {
-  position: relative; /* clé pour que .femme soit positionnée par rapport à l'image */    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .background img {
     width: 100%;
     height: 100%;
+    object-fit: contain; /* Garde les proportions sans couper l'image */
+    display: block;
   }
 
-.femme {
-  position: absolute;
-  top: 44%;
-  left: 44%;
-  width: 15vw; /* Largeur relative à la viewport */
-  height: auto;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  border: 10px solid white;
-  background: none;
-  padding: 0;
-  transform-origin: center;
-}
+  .femme {
+    position: absolute;
+    top: 50%;
+    left: 44%;
+    width: 12%; /* Pourcentage basé sur la taille du conteneur */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: 3px solid white;
+    background: none;
+    padding: 0;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+  }
 
-.femme img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+  .femme img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
   .femme:hover {
-    transform: scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  /* Responsive pour maintenir les proportions */
+  @media (max-aspect-ratio: 16/9) {
+    .femme {
+      width: 15%;
+    }
+  }
+
+  @media (max-aspect-ratio: 4/3) {
+    .femme {
+      width: 18%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .femme {
+      width: 20%;
+      border: 2px solid white;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .femme {
+      width: 25%;
+      border: 2px solid white;
+    }
   }
 </style>
 
