@@ -28,11 +28,11 @@
     position: absolute;
     top: 66%;
     left: 50%;
-    width: clamp(80px, 8vw, 150px); /* Taille responsive avec limites min/max */
+    width: 120px; /* Taille fixe en pixels - identique partout */
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
-    border: clamp(2px, 0.3vw, 5px) solid white; /* Bordure responsive avec limites */
+    border: 3px solid white;
     background: none;
     padding: 0;
     transform: translate(-50%, -50%);
