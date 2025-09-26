@@ -12,30 +12,23 @@
     position: relative;
     width: 100vw;
     height: 100vh;
+    /* Background directement sur le conteneur pour être identique partout */
+    background-image: url('../back/1.png');
+    background-size: cover; /* Remplit sans déformer */
+    background-position: center center;
+    background-repeat: no-repeat;
   }
 
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-
-  .background img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    display: block;
-  }
+  /* On supprime le wrapper <img> pour éviter les variations de rendu entre navigateurs */
 
   .femme {
     position: absolute;
     top: 66%;
     left: 50%;
+    /* Largeur FIXE (identique sur toutes tailles d'écran) */
+    --femme-width: 240px; /* Ajuste cette valeur si besoin */
+    width: var(--femme-width);
     height: auto;
-    width: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
     border: 3px solid white;
@@ -47,8 +40,8 @@
   }
 
   .femme img {
-    height: 100%;
-    width: auto;
+    width: 100%;
+    height: auto;
     display: block;
   }
 
@@ -58,9 +51,6 @@
 </style>
 
 <main>
-  <div class="background">
-    <img src={Back} alt="background" />
-  </div>
   <button class="femme" on:click={handleClick} type="button">
     <img src={Femme} alt="femme" />
   </button>
