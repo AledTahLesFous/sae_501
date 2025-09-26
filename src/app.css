@@ -4,3 +4,11 @@
   overflow: hidden;
   box-sizing: border-box;
 }
+
+html, body {
+  height: 100vh;
+}
+
+#app {
+  height: 100%;
+}

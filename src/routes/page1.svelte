@@ -19,19 +19,27 @@
   .background img {
     width: 100%;
     height: 100%;
-    object-fit: fill; /* cover = remplissage sans déformation visible */
   }
 
-  .femme {
-    position: absolute;
-    top: 33%;
-    left: 44%;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    border: 10px solid white;
-    background: none;
-    padding: 0;
-  }
+.femme {
+  position: absolute;
+  top: 44%;
+  left: 44%;
+  width: 15vw; /* Largeur relative à la viewport */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 10px solid white;
+  background: none;
+  padding: 0;
+  transform-origin: center;
+}
+
+.femme img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
   .femme:hover {
     transform: scale(1.1);
