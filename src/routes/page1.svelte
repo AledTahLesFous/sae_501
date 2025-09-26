@@ -20,20 +20,18 @@
   .background img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* cover = remplissage sans déformation visible */
-    display: block;
+    object-fit: fill; /* cover = remplissage sans déformation visible */
   }
 
   .femme {
     position: absolute;
-    top: 20%;
-    left: 41%;
+    top: 33%;
+    left: 44%;
     cursor: pointer;
     transition: transform 0.3s ease;
     border: 10px solid white;
     background: none;
     padding: 0;
-    scale: 0.6;
   }
 
   .femme:hover {
