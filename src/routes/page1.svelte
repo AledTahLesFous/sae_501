@@ -28,8 +28,8 @@
     position: absolute;
     top: 66%;
     left: 50%;
-    width: 120px; /* Taille fixe en pixels - identique partout */
     height: auto;
+    width: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
     border: 3px solid white;
@@ -40,8 +40,8 @@
   }
 
   .femme img {
-    width: 100%;
     height: auto;
+    width: auto;
     display: block;
   }
 
