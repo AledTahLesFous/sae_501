@@ -10,8 +10,7 @@
 <style>
 
   .background {
-    position: absolute;
-    top: 0;
+  position: relative; /* clé pour que .femme soit positionnée par rapport à l'image */    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -40,11 +39,11 @@
 </style>
 
 <main>
-  <div class="background">
-    <img src={Back} alt="background" />
-  </div>
-
+<div class="background">
+  <img src={Back} alt="background" />
   <button class="femme" on:click={handleClick} type="button">
     <img src={Femme} alt="femme" />
   </button>
+</div>
+
 </main>
