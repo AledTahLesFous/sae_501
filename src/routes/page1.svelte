@@ -28,11 +28,11 @@
     position: absolute;
     top: 66%;
     left: 50%;
-    width: 12%; /* Taille fixe en pourcentage - identique sur toutes les résolutions */
+    width: clamp(80px, 8vw, 150px); /* Taille responsive avec limites min/max */
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
-    border: 3px solid white;
+    border: clamp(2px, 0.3vw, 5px) solid white; /* Bordure responsive avec limites */
     background: none;
     padding: 0;
     transform: translate(-50%, -50%);
