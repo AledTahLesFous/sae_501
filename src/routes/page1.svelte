@@ -20,14 +20,14 @@
   .background img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Garde les proportions sans couper l'image */
+    object-fit: fill; /* Garde les proportions sans couper l'image */
     display: block;
   }
 
   .femme {
     position: absolute;
-    top: 50%;
-    left: 44%;
+    top: 66%;
+    left: 50%;
     width: 12%; /* Pourcentage basé sur la taille du conteneur */
     height: auto;
     cursor: pointer;
