@@ -1,5 +1,4 @@
 <script>
-  import Back from '../back/1.png';
   import Femme from '../perso/femme.png';
 
   function handleClick() {
@@ -12,41 +11,33 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    /* Background directement sur le conteneur pour être identique partout */
-    background-image: url('../back/1.png');
-    background-size: cover; /* Remplit sans déformer */
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
 
-  /* On supprime le wrapper <img> pour éviter les variations de rendu entre navigateurs */
+    background-image: url('../back/1.png');
+    background-size: contain;          /* ✅ change "cover" → "contain" */    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
 
   .femme {
     position: absolute;
-    top: 66%;
+    top: 50%; 
     left: 50%;
-    /* Largeur FIXE (identique sur toutes tailles d'écran) */
-    --femme-width: 240px; /* Ajuste cette valeur si besoin */
-    width: var(--femme-width);
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    border: 3px solid white;
+    transform: translate(-50%, -50%);
+    border: none;
     background: none;
     padding: 0;
-    transform: translate(-50%, -50%);
-    transform-origin: center;
-    z-index: 2;
+    cursor: pointer;
   }
 
   .femme img {
-    width: 100%;
+    width: 150px;
     height: auto;
-    display: block;
+    border: 1px solid purple;
+    transition: transform 0.2s ease-in-out;
   }
 
-  .femme:hover {
-    transform: translate(-50%, -50%) scale(1.1);
+  .femme:hover img {
+    transform: scale(1.1);
   }
 </style>
 
