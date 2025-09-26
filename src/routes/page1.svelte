@@ -28,7 +28,7 @@
     position: absolute;
     top: 66%;
     left: 50%;
-    width: 12%; /* Pourcentage basé sur la taille du conteneur */
+    width: 12%; /* Taille fixe en pourcentage - identique sur toutes les résolutions */
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -47,33 +47,6 @@
 
   .femme:hover {
     transform: translate(-50%, -50%) scale(1.1);
-  }
-
-  /* Responsive pour maintenir les proportions */
-  @media (max-aspect-ratio: 16/9) {
-    .femme {
-      width: 15%;
-    }
-  }
-
-  @media (max-aspect-ratio: 4/3) {
-    .femme {
-      width: 18%;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .femme {
-      width: 20%;
-      border: 2px solid white;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .femme {
-      width: 25%;
-      border: 2px solid white;
-    }
   }
 </style>
 
