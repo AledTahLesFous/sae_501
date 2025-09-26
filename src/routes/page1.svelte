@@ -26,13 +26,14 @@
 
   .femme {
     position: absolute;
-    top: 400px;
-    left: 850px;
+    top: 170px;
+    left: 700px;
     cursor: pointer;
     transition: transform 0.3s ease;
     border: 10px solid white;
     background: none;
     padding: 0;
+    scale: 0.6;
   }
 
   .femme:hover {
