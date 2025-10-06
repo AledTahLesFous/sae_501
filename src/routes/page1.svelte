@@ -96,7 +96,5 @@
     <!-- Rouet -->
     <div class="rouet" style="background-image: url({rouetImage})"></div>
 
-
-
   </div>
 </main>
