@@ -1,5 +1,5 @@
 <script>
-  import backgroundImage from '../back/1.png';
+  import backgroundImage from '../back/bg_1.png';
   import womanImage from '../perso/femme.png';
   import rouetImage from '../assets/rouet.png';
 
@@ -8,8 +8,7 @@
 <style>
   .container {
     width: 100vw;
-    height: 100vh;
-    background-color: purple;
+    height: 100vh; 
     z-index: 5;
     position: relative;
     overflow: hidden;
@@ -27,7 +26,6 @@
   .women {
     width: 100%;
     height: 100%;
-    background-image: url("");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -48,7 +46,6 @@
   .rouet {
   width: 100%;
   height: 100%;
-  background-image: url("");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
