@@ -6,8 +6,8 @@
   import Test from './routes/test.svelte';
 
   const routes = {
-    '/a': Page1,
-    '/aa': Test
+    '/': Page1,
+    '/test': Test
   };
 </script>
 

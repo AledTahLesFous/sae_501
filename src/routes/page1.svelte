@@ -1,9 +1,9 @@
 <script>
   import { onMount } from 'svelte';
-  import backgroundImage from '../backgrounds/page1/bg_1.png';
-    import backgroundImage2 from '../backgrounds/page1/bg_1_f2.png';
-    import backgroundImage3 from '../backgrounds/page1/bg_1_f3.png';
 
+  import backgroundImage from '../backgrounds/page1/bg_1.png';
+  import backgroundImage2 from '../backgrounds/page1/bg_1_f2.png';
+  import backgroundImage3 from '../backgrounds/page1/bg_1_f3.png';
 
   import womanImage from '../perso/femme.png';
   import rouetImage from '../assets/page1/rouet.png';
