@@ -1,6 +1,8 @@
 <script>
   import backgroundImage from '../back/1.png';
   import womanImage from '../perso/femme.png';
+  import rouetImage from '../assets/rouet.png';
+
 </script>
 
 <style>
@@ -42,25 +44,41 @@
     transform: scale(0.66);
   }
 
-  @media (max-width: 1920px) {
-    .women {
-      transform: scale(calc(0.2 + (100vw - 480px) / (1920 - 480) * (0.8 - 0.2)));
-    }
-  }
 
-  @media (max-height: 1080px) {
-    .women {
-      transform: scale(calc(0.2 + (100vh - 480px) / (1080 - 480) * (0.8 - 0.2)));
-    }
-  }
+  .rouet {
+  width: 100%;
+  height: 100%;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transform-origin: center center;
+  transform: scale(0.6);
+  z-index: 1;
+  position: absolute;
+  top: 20%;
+  left: -20%;
+  transition: transform 0.3s ease;
+  scale: 0.7;
+}
+
+.rouet:hover {
+  transform: scale(0.66);
+}
+
+
 </style>
 
 <main>
   <div class="container">
-    <!-- Background avec object-fit -->
+    <!-- Background -->
     <img src={backgroundImage} alt="Background" class="fullscreen-background" />
 
     <!-- Personnage féminin -->
     <div class="women" style="background-image: url({womanImage})"></div>
+    <!-- Rouet -->
+
+    <div class="rouet" style="background-image: url({rouetImage})"></div>
+
   </div>
 </main>
