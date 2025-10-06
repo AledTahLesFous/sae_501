@@ -1,8 +1,26 @@
 <script>
+  import { onMount } from 'svelte';
   import backgroundImage from '../back/bg_1.png';
-  import womanImage from '../perso/femme.png';
-  import rouetImage from '../assets/rouet.png';
+    import backgroundImage2 from '../back/bg_1_f2.png';
+    import backgroundImage3 from '../back/bg_1_f3.png';
 
+
+  import womanImage from '../perso/femme.png';
+  import rouetImage from '../assets/page1/rouet.png';
+
+  let currentBg = backgroundImage;
+
+  onMount(() => {
+    const images = [backgroundImage, backgroundImage3, backgroundImage2, backgroundImage3];
+    let index = 0;
+
+    const interval = setInterval(() => {
+      index = (index + 1) % images.length; 
+      currentBg = images[index];
+    }, 700);
+
+    return () => clearInterval(interval);
+  });
 </script>
 
 <style>
@@ -13,7 +31,6 @@
     position: relative;
     overflow: hidden;
     object-fit: cover;
-
   }
 
   .fullscreen-background {
@@ -24,27 +41,28 @@
   }
 
   .women {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    width: 22%;
+    height: 65%;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     transform-origin: center center;
-    transform: scale(0.6);
+    transform: scale(0.8);
     z-index: 1;
-    position: absolute;
-    top: 17%;
-    left: 5%;
+    top: 35%;
+    left: 45%;
     transition: transform 0.3s ease;
+    border: 1px solid white;
+
   }
 
   .women:hover {
     transform: scale(0.66);
   }
 
-
   .rouet {
-  width: 100%;
+  width: 45%;
   height: 100%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -54,9 +72,10 @@
   z-index: 1;
   position: absolute;
   top: 20%;
-  left: -20%;
+  left: 7%;
   transition: transform 0.3s ease;
   scale: 0.7;
+  border: 1px solid white;
 }
 
 .rouet:hover {
@@ -69,13 +88,15 @@
 <main>
   <div class="container">
     <!-- Background -->
-    <img src={backgroundImage} alt="Background" class="fullscreen-background" />
+    <img src={currentBg} alt="Background" class="fullscreen-background" />
 
     <!-- Personnage féminin -->
     <div class="women" style="background-image: url({womanImage})"></div>
-    <!-- Rouet -->
 
+    <!-- Rouet -->
     <div class="rouet" style="background-image: url({rouetImage})"></div>
+
+
 
   </div>
 </main>
