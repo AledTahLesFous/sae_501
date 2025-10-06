@@ -1,8 +1,8 @@
 <script>
   import { onMount } from 'svelte';
-  import backgroundImage from '../back/bg_1.png';
-    import backgroundImage2 from '../back/bg_1_f2.png';
-    import backgroundImage3 from '../back/bg_1_f3.png';
+  import backgroundImage from '../backgrounds/page1/bg_1.png';
+    import backgroundImage2 from '../backgrounds/page1/bg_1_f2.png';
+    import backgroundImage3 from '../backgrounds/page1/bg_1_f3.png';
 
 
   import womanImage from '../perso/femme.png';
@@ -48,7 +48,7 @@
     background-size: contain;
     background-position: center;
     transform-origin: center center;
-    transform: scale(0.8);
+    transform: scale(0.9);
     z-index: 1;
     top: 35%;
     left: 45%;
@@ -58,7 +58,7 @@
   }
 
   .women:hover {
-    transform: scale(0.66);
+    transform: scale(0.95);
   }
 
   .rouet {
