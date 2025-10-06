@@ -29,8 +29,16 @@
     transform: scale(0.6);
     z-index: 1;
     position: absolute;
-    top: 38%;
-    left: 25%;
+    top: 17%;
+    left: 5%;
+    transition: transform 0.3s ease;
+    transform-origin: center center; /* nouveau */
+
+
+  }
+
+  .women:hover {
+  transform: scale(0.66); /* 0.6 + un petit peu (~10%) */
   }
 
   @media (max-width: 1920px) {
@@ -38,6 +46,13 @@
       transform: scale(calc(0.2 + (100vw - 480px) / (1920 - 480) * (0.8 - 0.2)));
     }
   }
+
+    @media (max-height: 1080px) {
+    .women {
+      transform: scale(calc(0.2 + (100vh - 480px) / (1080 - 480) * (0.8 - 0.2)));
+    }
+  }
+
 </style>
 
 <main>
