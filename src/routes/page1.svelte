@@ -38,8 +38,6 @@
     top: 35%;
     left: 45%;
     transition: transform 0.3s ease;
-    border: 1px solid white;
-
   }
 
   .women:hover {
@@ -60,7 +58,6 @@
   left: 7%;
   transition: transform 0.3s ease;
   scale: 0.7;
-  border: 1px solid white;
 }
 
 .rouet:hover {
@@ -68,19 +65,23 @@
 }
 
 .textbox {
-  width: 750px;
-  height: 300px;
+  width: 50%;
+  height: 30%;
   position: absolute;
   z-index: 1;
   top: 2%;
   left: 2%;
   transform-origin: center;
   opacity: 1;
-  padding: 50px;
+  padding: 1%;
   color: white;
   font-family: 'Deutsch', sans-serif;
-  font-size: 25px;
+  font-size: clamp(0.5rem, 3vw, 2.5rem); /* min 1rem, max 2.5rem, mais responsive selon la largeur de la fenêtre */
   justify-content: space-around;
+  background-size: contain;
+  background-position: center;
+  transform-origin: center center;
+  border: 2px solid rgb(255, 255, 255);
 }
 
 
@@ -103,7 +104,7 @@
       aria-label="Aller à la page 2"
     ></a>
 
-    <div class="textbox">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non molestie nibh. Aenean quis semper lacus, quis finibus enim.</div>
+    <div class="textbox">Il était une fois une jeune fille jolie, mais négligente et paresseuse.</div>
 
     <div class="bt">
       <div class="hidetext"></div>
