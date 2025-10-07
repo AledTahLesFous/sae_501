@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
-  import { writable } from 'svelte/store';
 
+  import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page2/bg_2.png';
 
   let currentBg = backgroundImage;
@@ -53,6 +53,9 @@
 
         if (rotationsCount >= 6) {
           spinnerVisible = false;
+            setTimeout(() => {
+            window.location.hash = '#/page3';
+        }, 1000);
         }
       }
     }
@@ -63,30 +66,10 @@
 
 
 <style>
-
-.textbox {
-  width: 750px;
-  height: 300px;
-  position: absolute;
-  z-index: 1;
-  top: 2%;
-  left: 2%;
-  transform-origin: center;
-  opacity: 1;
-  padding: 50px;
-  color: white;
-  font-family: 'Deutsch', sans-serif;
-  font-size: 25px;
-  justify-content: space-around;
-}
-
 #spinner {
   position: absolute;
-  width: 350px;
-  height: 350px;
-  border: 6px solid rgb(0, 0, 0, 0.8);
-  background-color: rgba(47, 47, 47, 0.23);
-  border-radius: 50%;
+  width: 500px;
+  height: 500px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(0deg);
@@ -95,6 +78,18 @@
   user-select: none;
 }
 
+.arrow {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.arrow:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
+.arrow:nth-child(2) { top: 50%; right: 0; transform: translateY(-50%) rotate(90deg); }
+.arrow:nth-child(3) { bottom: 0; left: 50%; transform: translateX(-50%) rotate(180deg); }
+.arrow:nth-child(4) { top: 50%; left: 0; transform: translateY(-50%) rotate(270deg); }
 </style>
 
 
@@ -104,14 +99,17 @@
     <img src={currentBg} alt="Background" class="fullscreen-background" />
 
     <!-- Texte -->
+       {#if $textboxVisible}
     <div class="textbox">Quand on l’obligeait de filer</div>
-
+  {/if}
     <!-- Spinner -->
     {#if spinnerVisible}
-      <div 
-        id="spinner"
-        style="transform: translate(-50%, -50%) rotate({rotation}deg);">
-      </div>
+<div id="spinner" style="transform: translate(-50%, -50%) rotate({rotation}deg);">
+  <div class="arrow"></div>
+  <div class="arrow"></div>
+  <div class="arrow"></div>
+  <div class="arrow"></div>
+</div>
     {/if}
   </div>
 </main>

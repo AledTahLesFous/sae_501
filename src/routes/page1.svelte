@@ -1,6 +1,9 @@
 <script>
   import { onMount } from 'svelte';
 
+  import { textboxVisible } from '../stores.js';
+
+
   import backgroundImage from '../backgrounds/page1/bg_1.png';
   import backgroundImage2 from '../backgrounds/page1/bg_1_f2.png';
   import backgroundImage3 from '../backgrounds/page1/bg_1_f3.png';
@@ -64,28 +67,6 @@
   transform: scale(0.66);
 }
 
-.textbox {
-  width: 50%;
-  height: 30%;
-  position: absolute;
-  z-index: 1;
-  top: 2%;
-  left: 2%;
-  transform-origin: center;
-  opacity: 1;
-  padding: 1%;
-  color: white;
-  font-family: 'Deutsch', sans-serif;
-  font-size: clamp(0.5rem, 3vw, 2.5rem); /* min 1rem, max 2.5rem, mais responsive selon la largeur de la fenêtre */
-  justify-content: space-around;
-  background-size: contain;
-  background-position: center;
-  transform-origin: center center;
-  border: 2px solid rgb(255, 255, 255);
-}
-
-
-
 </style>
 
 <main>
@@ -104,10 +85,11 @@
       aria-label="Aller à la page 2"
     ></a>
 
-    <div class="textbox">Il était une fois une jeune fille jolie, mais négligente et paresseuse.</div>
-
-    <div class="bt">
-      <div class="hidetext"></div>
+  {#if $textboxVisible}
+    <div class="textbox">
+      Il était une fois une jeune fille jolie, mais négligente et paresseuse.
     </div>
+  {/if}
+
   </div>
 </main>
