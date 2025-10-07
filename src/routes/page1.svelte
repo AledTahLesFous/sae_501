@@ -24,21 +24,6 @@
 </script>
 
 <style>
-  .container {
-    width: 100vw;
-    height: 100vh; 
-    z-index: 5;
-    position: relative;
-    overflow: hidden;
-    object-fit: cover;
-  }
-
-  .fullscreen-background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
 
   .women {
     position: absolute;
@@ -82,6 +67,23 @@
   transform: scale(0.66);
 }
 
+.textbox {
+  width: 750px;
+  height: 300px;
+  position: absolute;
+  z-index: 1;
+  top: 2%;
+  left: 2%;
+  transform-origin: center;
+  opacity: 1;
+  padding: 50px;
+  color: white;
+  font-family: 'Deutsch', sans-serif;
+  font-size: 25px;
+  justify-content: space-around;
+}
+
+
 
 </style>
 
@@ -94,7 +96,17 @@
     <div class="women" style="background-image: url({womanImage})"></div>
 
     <!-- Rouet -->
-    <div class="rouet" style="background-image: url({rouetImage})"></div>
+    <a 
+      href="#/page2"
+      class="rouet"
+      style="background-image: url({rouetImage})"
+      aria-label="Aller à la page 2"
+    ></a>
 
+    <div class="textbox">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non molestie nibh. Aenean quis semper lacus, quis finibus enim.</div>
+
+    <div class="bt">
+      <div class="hidetext"></div>
+    </div>
   </div>
 </main>
