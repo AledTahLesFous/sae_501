@@ -8,7 +8,7 @@
   import backgroundImage2 from '../backgrounds/page1/bg_1_f2.png';
   import backgroundImage3 from '../backgrounds/page1/bg_1_f3.png';
 
-  import womanImage from '../perso/femme.png';
+  import womanImage from '../assets/page1/femme.png';
   import rouetImage from '../assets/page1/rouet.png';
 
   let currentBg = backgroundImage;
