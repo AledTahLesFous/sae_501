@@ -1,9 +1,10 @@
 <script>
+
   import { onMount } from 'svelte';
 
   import { textboxVisible } from '../stores.js';
-  import backgroundImage from '../backgrounds/page8/bg_8.png';
-  import servanteImage from '../assets/page8/servante.png';
+  import backgroundImage from '../backgrounds/page8/bg_8.avif';
+  import servanteImage from '../assets/page8/servante.avif';
 
   let currentBg = backgroundImage;
 
