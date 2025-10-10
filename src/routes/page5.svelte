@@ -13,7 +13,7 @@
   let index = 0;
   let compteur = 0;
 
-  function Test() {
+  function Action() {
     index = (index + 1) % images.length;
     currentImg = images[index];
     compteur++;
@@ -62,7 +62,7 @@
     <div class="container-flex">
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-    <img src={currentImg} alt="currentImg" class="women" on:click={Test}/>
+    <img src={currentImg} alt="currentImg" class="women" on:click={Action}/>
     </div>
 
 
