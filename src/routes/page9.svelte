@@ -5,16 +5,18 @@
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page9/bg_9.avif';
   import servanteImage from '../assets/page9/servante.avif';
+  import servanteImage2 from '../assets/page9/servante_f2.avif';
 
-  let currentBg = backgroundImage;
+
+  let currentImg = servanteImage;
 
   onMount(() => {
-    const images = [backgroundImage];
+    const images = [servanteImage, servanteImage2];
     let index = 0;
 
     const interval = setInterval(() => {
       index = (index + 1) % images.length; 
-      currentBg = images[index];
+      currentImg = images[index];
     }, 700);
 
     return () => clearInterval(interval);
@@ -41,7 +43,7 @@
   }
 
   .women:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 
 
@@ -56,7 +58,7 @@
   <a 
       href="#/page10"
       class="women"
-      style="background-image: url({servanteImage})"
+      style="background-image: url({currentImg})"
       aria-label="Aller à la page 10"
     ></a>
 
