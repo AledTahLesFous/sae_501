@@ -26,8 +26,6 @@ html, body {
   z-index: 0;
 }
 
-
-
 .bt-container {
   display: flex;
   width: 100%;
@@ -51,9 +49,8 @@ html, body {
 .hide {
   width: 80%;
   aspect-ratio: 1 / 1; 
-
   background-color: rgb(255, 0, 162);
-  position: relative; /* plus besoin de absolute ici */
+  position: relative; 
   z-index: 9999;
 }
 
@@ -67,7 +64,7 @@ html, body {
   opacity: 1;
   padding: 1%;
   color: white;
-  font-family: 'Deutsch', sans-serif;
+  font-family: 'Land', sans-serif;
   font-size: clamp(0.5rem, 3vw, 2.5rem); /* min 1rem, max 2.5rem, mais responsive selon la largeur de la fenêtre */
   justify-content: space-around;
   background-size: contain;
@@ -75,7 +72,6 @@ html, body {
   transform-origin: center center;
   border: 2px solid rgb(255, 255, 255);
 }
-
 
 .textbox2 {
   width: 40%;
@@ -87,7 +83,7 @@ html, body {
   opacity: 1;
   padding: 1%;
   color: white;
-  font-family: 'Deutsch', sans-serif;
+  font-family: 'Land', sans-serif;
   font-size: clamp(0.5rem, 3vw, 2.5rem); /* min 1rem, max 2.5rem, mais responsive selon la largeur de la fenêtre */
   justify-content: space-around;
   background-size: contain;
@@ -97,8 +93,8 @@ html, body {
 }
 
 @font-face {
-font-family: 'Deutsch';
-src: url('assets/fonts/Deutsch.ttf') format('truetype');
+font-family: 'Land';
+src: url('assets/fonts/Land.otf') format('truetype');
 font-weight: normal;
 font-style: normal;
 }
