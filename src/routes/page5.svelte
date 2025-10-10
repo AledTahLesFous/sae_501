@@ -3,10 +3,10 @@
 
 
   import { textboxVisible } from '../stores.js';
-  import backgroundImage from '../backgrounds/page5/bg_5.png';
-  import womanImage from '../assets/page5/pov.png'
-  import womanImage2 from '../assets/page5/pov_f2.png'
-  import womanImage3 from '../assets/page5/pov_f3.png'
+  import backgroundImage from '../backgrounds/page5/bg_5.avif';
+  import womanImage from '../assets/page5/pov.avif'
+  import womanImage2 from '../assets/page5/pov_f2.avif'
+  import womanImage3 from '../assets/page5/pov_f3.avif'
 
   let currentImg = womanImage;
   const images = [womanImage, womanImage2, womanImage, womanImage3];

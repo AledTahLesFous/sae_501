@@ -1,15 +1,8 @@
 <script>
 // @ts-nocheck
-
-
   import { textboxVisible } from '../stores.js';
-  import backgroundImage from '../backgrounds/page5/bg_5.png';
-  import womanImage from '../assets/page6/pov.png'
-
-
-
-
-
+  import backgroundImage from '../backgrounds/page5/bg_5.avif';
+  import womanImage from '../assets/page6/pov.avif'
 </script>
 
 <style>

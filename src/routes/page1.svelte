@@ -4,12 +4,12 @@
   import { textboxVisible } from '../stores.js';
 
 
-  import backgroundImage from '../backgrounds/page1/bg_1.png';
-  import backgroundImage2 from '../backgrounds/page1/bg_1_f2.png';
-  import backgroundImage3 from '../backgrounds/page1/bg_1_f3.png';
+  import backgroundImage from '../backgrounds/page1/bg_1.avif';
+  import backgroundImage2 from '../backgrounds/page1/bg_1_f2.avif';
+  import backgroundImage3 from '../backgrounds/page1/bg_1_f3.avif';
 
-  import womanImage from '../assets/page1/femme.png';
-  import rouetImage from '../assets/page1/rouet.png';
+  import womanImage from '../assets/page1/femme.avif';
+  import rouetImage from '../assets/page1/rouet.avif';
 
   let currentBg = backgroundImage;
 

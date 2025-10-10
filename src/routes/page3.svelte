@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
 
   import { textboxVisible } from '../stores.js';
-  import backgroundImage from '../backgrounds/page3/bg_3.png';
-  import backgroundImage2 from '../backgrounds/page3/bg_3_f2.png';
+  import backgroundImage from '../backgrounds/page3/bg_3.avif';
+  import backgroundImage2 from '../backgrounds/page3/bg_3_f2.avif';
 
   let currentBg = backgroundImage;
 

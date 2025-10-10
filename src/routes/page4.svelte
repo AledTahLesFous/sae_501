@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
 
   import { textboxVisible } from '../stores.js';
-  import backgroundImage from '../backgrounds/page4/bg_4.png';
+  import backgroundImage from '../backgrounds/page4/bg_4.avif';
 
 
 </script>
