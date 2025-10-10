@@ -18,7 +18,7 @@
     currentImg = images[index];
     compteur++;
     if(compteur==10) {
-      window.location.hash = '#/test';
+      window.location.hash = '#/page6';
     }
   }
 
