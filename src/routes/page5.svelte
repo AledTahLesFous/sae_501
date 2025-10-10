@@ -5,10 +5,23 @@
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page5/bg_5.png';
   import womanImage from '../assets/page5/pov.png'
+  import womanImage2 from '../assets/page5/pov_f2.png'
+  import womanImage3 from '../assets/page5/pov_f3.png'
+
+  let currentImg = womanImage;
+  const images = [womanImage, womanImage2, womanImage, womanImage3];
+  let index = 0;
+  let compteur = 0;
 
   function Test() {
-    console.log("Helo")
+    index = (index + 1) % images.length;
+    currentImg = images[index];
+    compteur++;
+    if(compteur==10) {
+      window.location.hash = '#/test';
+    }
   }
+
 
 
 </script>
@@ -22,14 +35,13 @@
     background-size: cover;
     flex-direction: column;
     justify-content: end;
-    align-items: center;   
-
+    align-items: center; 
   }
 
   .women {
     position: absolute;
-    width: 53%;
-    height: 30%;
+    width: 55%;
+    height: 55%;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -50,7 +62,7 @@
     <div class="container-flex">
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-    <img src={womanImage} alt="womanImage" class="women" on:click={Test}/>
+    <img src={currentImg} alt="currentImg" class="women" on:click={Test}/>
     </div>
 
 
