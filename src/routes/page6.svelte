@@ -9,7 +9,7 @@
 onMount(() => {
   const timer = setTimeout(() => {
     window.location.hash = '#/page7';
-  }, 7000);
+  }, 4500);
 
   return () => clearTimeout(timer);
 });
