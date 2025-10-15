@@ -32,8 +32,9 @@
 <main>
   <div class="container">
     <!-- Background -->
-    <img src={currentBg} alt="Background" class="fullscreen-background" />
-
+        {#key currentBg}
+      <img src={currentBg} alt="Background" class="fullscreen-background" />
+    {/key}
        {#if $textboxVisible}
 
     <div class="textbox2">Elle s’en acquittait avec tant d’ennui</div>

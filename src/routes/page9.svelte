@@ -1,71 +1,54 @@
 <script>
-
   import { onMount } from 'svelte';
-
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page9/bg_9.avif';
-  import servanteImage from '../assets/page9/servante.avif';
-  import servanteImage2 from '../assets/page9/servante_f2.avif';
+  import backgroundImage2 from '../backgrounds/page9/bg_9_f2.avif';
 
-
-  let currentImg = servanteImage;
+  let currentImg = backgroundImage;
 
   onMount(() => {
-    const images = [servanteImage, servanteImage2];
+    const images = [backgroundImage, backgroundImage2];
     let index = 0;
 
     const interval = setInterval(() => {
-      index = (index + 1) % images.length; 
+      index = (index + 1) % images.length;
       currentImg = images[index];
     }, 700);
 
     return () => clearInterval(interval);
   });
-
 </script>
-
 
 <style>
 
-  .women {
+
+  .hitbox {
+    width: 35%;
+    height: 100%;
+    border: 1px solid purple;
     position: absolute;
-    width: 22%;
-    height: 65%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    transform-origin: center center;
-    z-index: 1;
-    scale: 1.5;
-    top: 18.5%;
-    left: 36%;
-    transition: transform 0.3s ease;
+    top: 0;
+    left: 30%;
+    z-index: 9999;
   }
-
-  .women:hover {
-    transform: scale(1.03);
-  }
-
-
 </style>
-
 
 <main>
   <div class="container">
     <!-- Background -->
-    <img src={backgroundImage} alt="Background" class="fullscreen-background" />
+    {#key currentImg}
+      <img src={currentImg} alt="Background" class="fullscreen-background" />
+    {/key}
 
-  <a 
+    <!-- Zone cliquable -->
+    <a 
       href="#/page10"
-      class="women"
-      style="background-image: url({currentImg})"
+      class="hitbox"
       aria-label="Aller à la page 10"
     ></a>
 
     {#if $textboxVisible}
-    <div class="textbox">Les nettoyait</div>
+      <div class="textbox">Les nettoyait</div>
     {/if}
-
   </div>
 </main>
-

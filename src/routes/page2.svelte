@@ -96,8 +96,9 @@
 <main on:mousemove={handleMouseMove}>
   <div class="container">
     <!-- Background -->
-    <img src={currentBg} alt="Background" class="fullscreen-background" />
-
+        {#key currentBg}
+      <img src={currentBg} alt="Background" class="fullscreen-background" />
+    {/key}
     <!-- Texte -->
        {#if $textboxVisible}
     <div class="textbox">Quand on l’obligeait de filer</div>

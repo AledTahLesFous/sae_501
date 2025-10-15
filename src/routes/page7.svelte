@@ -87,8 +87,9 @@
 <main>
   <div class="container">
     <!-- Background -->
-    <img src={currentBg} alt="Background" class="fullscreen-background" />
-
+        {#key currentBg}
+      <img src={currentBg} alt="Background" class="fullscreen-background" />
+    {/key}
     <!-- Servante (cliquable seulement si visible) -->
     <a
       class="women {servanteVisible ? 'visible' : ''}"
