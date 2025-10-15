@@ -28,7 +28,6 @@
     position: absolute;
     top: 0;
     left: 20%;
-    border: 1px solid purple;
     cursor: pointer;
     z-index: 10;
   }
