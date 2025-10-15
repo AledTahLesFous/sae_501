@@ -1,8 +1,19 @@
 <script>
+  import { onMount } from 'svelte';
+
 // @ts-nocheck
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page5/bg_5.avif';
   import womanImage from '../assets/page6/pov.avif'
+
+onMount(() => {
+  const timer = setTimeout(() => {
+    window.location.hash = '#/page7';
+  }, 7000);
+
+  return () => clearTimeout(timer);
+});
+
 </script>
 
 <style>
