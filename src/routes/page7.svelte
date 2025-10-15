@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
   import { onMount } from 'svelte';
   import { textboxVisible } from '../stores.js';
 
@@ -103,7 +105,9 @@
     {/key}
 
 <div class="container-flex {servanteVisible ? 'visible' : ''}">
-  <img src={servanteImage} alt="servanteImage" class="women" />
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+  <img src={servanteImage} alt="servanteImage" class="women" on:click={window.location.hash = '#/page8'}/>
 </div>
 
 
