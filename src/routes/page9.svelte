@@ -25,11 +25,9 @@
   .hitbox {
     width: 35%;
     height: 100%;
-    border: 1px solid purple;
     position: absolute;
     top: 0;
     left: 30%;
-    z-index: 9999;
   }
 </style>
 
