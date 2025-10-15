@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 
   import { onMount } from 'svelte';
 
@@ -48,6 +50,10 @@
     transition: transform 0.3s ease;
   }
 
+  .women:hover {
+    transform: scale(1.02);
+  }
+
 </style>
 
 
@@ -56,11 +62,10 @@
     <!-- Background -->
     <img src={backgroundImage} alt="Background" class="fullscreen-background" />
     <div class="container-flex">
-            <img src={servanteImage} alt="servanteImage" class="women"/>
-
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+  <img src={servanteImage} alt="servanteImage" class="women" on:click={window.location.hash = '#/page11'}/>
     </div>
-
-
 
     {#if $textboxVisible}
     <div class="textbox">Les filait bien fin</div>
