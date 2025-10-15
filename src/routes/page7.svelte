@@ -38,27 +38,37 @@
 
 <style>
 
+  .container-flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center; 
+    position: absolute;
+
+      opacity: 0; /* invisible au départ */
+  transition: opacity 0.5s ease; /* transition fluide */
+
+  }
+
+  /* Classe pour rendre visible */
+.container-flex.visible {
+  opacity: 1;
+}
 
   .women {
     position: absolute;
-    width: 30%;
+    width: 28%;
     height: 100%;
-    background-repeat: no-repeat;
     background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     transform-origin: center center;
     z-index: 1;
-    top: 3%;
-    left: 25%;
-    transition: opacity 1s ease, transform 0.3s ease;
-    opacity: 0; 
-    pointer-events: none; 
+    transition: transform 0.3s ease;
   }
 
-  .women.visible {
-    opacity: 1; 
-    pointer-events: auto; 
-  }
 
   .women:hover {
     transform: scale(1.02);
@@ -82,6 +92,7 @@
   .porte:not(.no-hover):hover {
     transform: scale(1.05);
   }
+
 </style>
 
 <main>
@@ -90,13 +101,12 @@
         {#key currentBg}
       <img src={currentBg} alt="Background" class="fullscreen-background" />
     {/key}
-    <!-- Servante (cliquable seulement si visible) -->
-    <a
-      class="women {servanteVisible ? 'visible' : ''}"
-      href="#/page8"
-      style="background-image: url({servanteImage})"
-      aria-label="Aller à la page 8"
-    ></a>
+
+<div class="container-flex {servanteVisible ? 'visible' : ''}">
+  <img src={servanteImage} alt="servanteImage" class="women" />
+</div>
+
+
 
     <!-- Porte -->
     <!-- svelte-ignore a11y_click_events_have_key_events -->
