@@ -47,8 +47,8 @@
     align-items: center; 
     position: absolute;
 
-      opacity: 0; /* invisible au départ */
-  transition: opacity 0.5s ease; /* transition fluide */
+    opacity: 0; /* invisible au départ */
+    transition: opacity 0.5s ease; /* transition fluide */
 
   }
 
