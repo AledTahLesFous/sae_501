@@ -10,6 +10,7 @@
   import Page8 from './routes/page8.svelte';
   import Page9 from './routes/page9.svelte';
   import Page10 from './routes/page10.svelte';
+  import Page11 from './routes/page11.svelte';
 
   // @ts-ignore
   import Test from './routes/test.svelte';
@@ -26,6 +27,7 @@
     '/page8': Page8,
     '/page9': Page9,
     '/page10': Page10,
+    '/page11': Page11,
     '/test': Test
   };
 
