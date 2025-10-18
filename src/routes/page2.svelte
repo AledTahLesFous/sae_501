@@ -68,8 +68,8 @@
 <style>
 #spinner {
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 30%;
+  aspect-ratio: 1/1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(0deg);
@@ -80,8 +80,8 @@
 
 .arrow {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 3%;
+  height: 4%;
   background-color: white;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
