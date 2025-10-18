@@ -12,6 +12,9 @@
   import Page10 from './routes/page10.svelte';
   import Page11 from './routes/page11.svelte';
 
+  import iconOn from './assets/general/1.svg';
+  import iconOff from './assets/general/2.png';
+
   // @ts-ignore
   import Test from './routes/test.svelte';
   import { textboxVisible } from './stores.js';
@@ -46,8 +49,9 @@ function toggleAudio() {
 <!-- Bouton global pour cacher/afficher les textbox -->
   <div class="bt-container">
     <div class="bt">
-      <button on:click={toggleTextbox} class="hide" aria-label="Toggle Textbox">
-      </button>
+  <button on:click={toggleTextbox} class="hide" aria-label="Toggle Textbox">
+    <img src={$textboxVisible ? iconOn : iconOff} alt="Toggle textbox" />
+  </button>
       <button on:click={toggleAudio} class="hide" aria-label="Toggle Audio">
       </button>
     </div>
