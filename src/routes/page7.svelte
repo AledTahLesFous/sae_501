@@ -59,11 +59,14 @@
     opacity: 0; /* invisible au départ */
     transition: opacity 0.5s ease; /* transition fluide */
 
+    pointer-events: none;
+
   }
 
   /* Classe pour rendre visible */
 .container-flex.visible {
   opacity: 1;
+  pointer-events: auto;
 }
 
   .women {
