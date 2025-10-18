@@ -1,6 +1,7 @@
 <script>
 // @ts-nocheck
 
+  import { push } from 'svelte-spa-router';
 
   import { onMount } from 'svelte';
 
@@ -21,6 +22,11 @@
 
     return () => clearInterval(interval);
   });
+
+  
+    function goToPage12() {
+    push('/page12');
+  }
 
 </script>
 
@@ -64,7 +70,7 @@
     <div class="container-flex">
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-  <img src={servanteImage} alt="servanteImage" class="women" on:click={window.location.hash = '#/page11'}/>
+  <img src={servanteImage} alt="servanteImage" class="women" on:click={goToPage12}/>
     </div>
 
     {#if $textboxVisible}
