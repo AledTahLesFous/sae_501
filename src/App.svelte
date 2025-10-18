@@ -11,6 +11,7 @@
   import Page9 from './routes/page9.svelte';
   import Page10 from './routes/page10.svelte';
   import Page11 from './routes/page11.svelte';
+  import Page12 from './routes/page12.svelte';
 
   import iconOn from './assets/general/1.svg';
   import iconOff from './assets/general/2.png';
@@ -31,6 +32,7 @@
     '/page9': Page9,
     '/page10': Page10,
     '/page11': Page11,
+    '/page12': Page12,
     '/test': Test
   };
 
