@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Router from 'svelte-spa-router';
   import Page1 from './routes/page1.svelte';
   import Page2 from './routes/page2.svelte';
@@ -15,13 +15,12 @@
   import Page13 from './routes/page13.svelte';
   import Page14 from './routes/page14.svelte';
   import Page15 from './routes/page15.svelte';
+  import Page16 from './routes/page16.svelte';
+  import Test from './routes/test.svelte';
+  import { textboxVisible } from './stores.js';
 
   import iconOn from './assets/general/1.svg';
   import iconOff from './assets/general/2.png';
-
-  // @ts-ignore
-  import Test from './routes/test.svelte';
-  import { textboxVisible } from './stores.js';
 
   const routes = {
     '/': Page1,
@@ -39,35 +38,68 @@
     '/page13': Page13,
     '/page14': Page14,
     '/page15': Page15,
+    '/page16': Page16,
     '/test': Test
   };
+
+  let isMuted = true; // audio désactivé par défaut
+  let audioInitialized = false;
 
   function toggleTextbox() {
     textboxVisible.update(v => !v);
   }
 
-let isMuted = false;
+  function toggleAudio() {
+    const audio = document.getElementById('bg-audio') as HTMLAudioElement | null;
+    if (!audio) return;
 
-function toggleAudio() {
+    if (!audioInitialized) {
+      // première interaction utilisateur : initialise l'audio
+      audioInitialized = true;
+      playPageAudio(window.location.hash.replace('#', '') || '/');
+    }
 
-}
+    if (isMuted) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+    isMuted = !isMuted;
+  }
 
+  function playPageAudio(path: string) {
+    const audio = document.getElementById('bg-audio') as HTMLAudioElement | null;
+    if (!audio || !audioInitialized) return;
+
+    // détecte le numéro de page
+    let pageNumber = 1; // page d'accueil par défaut
+    const match = path.match(/page(\d+)/);
+    if (match) pageNumber = parseInt(match[1]);
+
+    // met à jour la source audio
+    audio.src = `/src/voices/vc_${pageNumber}.mp3`;
+
+    if (!isMuted) {
+      audio.play().catch(err => {
+        console.warn('Impossible de jouer l’audio avant interaction utilisateur');
+      });
+    }
+  }
 </script>
 
-<!-- Bouton global pour cacher/afficher les textbox -->
-  <div class="bt-container">
-    <div class="bt">
-  <button on:click={toggleTextbox} class="hide" aria-label="Toggle Textbox">
-    <img src={$textboxVisible ? iconOn : iconOff} alt="Toggle textbox" />
-  </button>
-      <button on:click={toggleAudio} class="hide" aria-label="Toggle Audio">
-      </button>
-    </div>
+<div class="bt-container">
+  <div class="bt">
+    <button on:click={toggleTextbox} class="hide" aria-label="Toggle Textbox">
+      <img src={$textboxVisible ? iconOn : iconOff} alt="Toggle textbox" />
+    </button>
+    <button on:click={toggleAudio} class="hide" aria-label="Toggle Audio">
+      {isMuted ? '🔇' : '🔊'}
+    </button>
   </div>
+</div>
 
-
-<audio id="bg-audio" autoplay loop>
-  <source src="/assets/audio/background.mp3" type="audio/mpeg" />
+<audio id="bg-audio">
   Ton navigateur ne supporte pas l'audio HTML5.
 </audio>
-<Router {routes} useHash={true} />
+
+<Router {routes} useHash={true} on:routeLoaded={(e) => playPageAudio(e.detail.location)} />
