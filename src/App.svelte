@@ -85,6 +85,42 @@
       });
     }
   }
+
+  // --- Navigation clavier ---
+  const pageOrder = [
+    '/', '/page2','/page3','/page4','/page5','/page6','/page7','/page8',
+    '/page9','/page10','/page11','/page12','/page13','/page14','/page15','/page16'
+  ];
+
+  function navigatePage(offset: number) {
+    const hash = window.location.hash.replace('#', '') || '/';
+    const idx = pageOrder.indexOf(hash);
+    if (idx === -1) return;
+
+    let newIdx = idx + offset;
+    if (newIdx < 0) newIdx = 0;
+    if (newIdx >= pageOrder.length) newIdx = pageOrder.length - 1;
+
+    window.location.hash = pageOrder[newIdx];
+  }
+
+  function handleKeydown(event: KeyboardEvent) {
+    if (event.key === 'ArrowLeft') {
+      navigatePage(-1);
+    } else if (event.key === 'ArrowRight') {
+      navigatePage(1);
+    }
+  }
+
+  // OnMount pour ajouter l'écouteur clavier
+  import { onMount, onDestroy } from 'svelte';
+  onMount(() => {
+    window.addEventListener('keydown', handleKeydown);
+  });
+
+  onDestroy(() => {
+    window.removeEventListener('keydown', handleKeydown);
+  });
 </script>
 
 <div class="bt-container">
