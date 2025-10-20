@@ -22,7 +22,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Récupère le code du repo
+      # Récupère le code du repo a
       - name: Checkout
         uses: actions/checkout@v4
 
