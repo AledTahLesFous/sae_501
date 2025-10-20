@@ -72,9 +72,7 @@
 <main>
   <div class="container">
     <!-- Background -->
-        {#key currentBg}
       <img src={currentBg} alt="Background" class="fullscreen-background" />
-    {/key}
 
     <!-- Personnage féminin -->
     <div class="women" style="background-image: url({womanImage})"></div>

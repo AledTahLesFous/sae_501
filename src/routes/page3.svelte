@@ -40,9 +40,7 @@
 <main>
   <div class="container">
     <!-- Image de fond -->
-    {#key currentBg}
       <img src={currentBg} alt="Background" class="fullscreen-background" />
-    {/key}
 
     <!-- Zone cliquable -->
     <!-- svelte-ignore a11y_click_events_have_key_events -->

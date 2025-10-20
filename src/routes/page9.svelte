@@ -34,9 +34,7 @@
 <main>
   <div class="container">
     <!-- Background -->
-    {#key currentImg}
       <img src={currentImg} alt="Background" class="fullscreen-background" />
-    {/key}
 
     <!-- Zone cliquable -->
     <a 

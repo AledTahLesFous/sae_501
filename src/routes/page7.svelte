@@ -110,9 +110,7 @@
 <main>
   <div class="container">
     <!-- Background -->
-        {#key currentBg}
       <img src={currentBg} alt="Background" class="fullscreen-background" />
-    {/key}
 
 <div class="container-flex {servanteVisible ? 'visible' : ''}">
   <!-- svelte-ignore a11y_click_events_have_key_events -->
