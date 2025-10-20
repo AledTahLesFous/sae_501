@@ -12,6 +12,12 @@
     currentBg = backgroundImage2;
     currentText = "Hmpf";
 
+    // Jouer le son vc_3_2
+    const audio = new Audio('/src/voices/vc_3_2.mp3');
+    audio.play().catch(err => {
+      console.warn('Impossible de jouer l’audio avant interaction utilisateur');
+    });
+
     // Après 2 secondes, redirige vers /page4
     setTimeout(() => {
       window.location.hash = "#/page4";
@@ -20,8 +26,6 @@
 </script>
 
 <style>
-
-
   .hitbox {
     width: 35%;
     height: 100%;
@@ -31,7 +35,6 @@
     cursor: pointer;
     z-index: 10;
   }
-
 </style>
 
 <main>
