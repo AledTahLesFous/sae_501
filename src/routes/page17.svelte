@@ -6,7 +6,7 @@
   import { onMount } from 'svelte';
 
   import { textboxVisible } from '../stores.js';
-  import backgroundImage from '../backgrounds/page14/bg_14.png';
+  import backgroundImage from '../backgrounds/page17/bg_17.png';
 
   let currentBg = backgroundImage;
 
@@ -72,7 +72,7 @@
     </div>
 
     {#if $textboxVisible}
-    <div class="textbox">Et la noce allait se faire</div>
+    <div class="textbox">Le fiancé lui demanda ce qu’elle voulait dire.</div>
     {/if}
 
   </div>

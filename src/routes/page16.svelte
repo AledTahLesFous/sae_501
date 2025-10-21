@@ -72,7 +72,7 @@
     </div>
 
     {#if $textboxVisible}
-    <div class="textbox">Et elle s’en fit faire une jolie robe</div>
+    <div class="textbox">La future se mit à chanter : “La fillette se fait gloire des restes de mon fuseau.</div>
     {/if}
 
   </div>
