@@ -91,6 +91,22 @@
         console.warn('Impossible de jouer l’audio avant interaction utilisateur');
       });
     }
+  
+      if (pageNumber === 16) {
+      audio.addEventListener('ended', handleAudioEnd);
+    }
+  }
+
+  function handleAudioEnd() {
+    const audio = document.getElementById('bg-audio') as HTMLAudioElement | null;
+    if (!audio) return;
+
+    // Joue la musique finale après vc_16
+    audio.src = '/src/voices/song.mp3';
+    audio.loop = true; // si tu veux que la musique continue
+    audio.play().catch(() => {
+      console.warn('Lecture automatique bloquée, interaction requise.');
+    });
   }
 
   // --- Navigation clavier ---
