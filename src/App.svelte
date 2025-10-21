@@ -16,6 +16,7 @@
   import Page14 from './routes/page14.svelte';
   import Page15 from './routes/page15.svelte';
   import Page16 from './routes/page16.svelte';
+  import Page17 from './routes/page17.svelte';
   import Test from './routes/test.svelte';
   import { textboxVisible } from './stores.js';
 
@@ -39,6 +40,7 @@
     '/page14': Page14,
     '/page15': Page15,
     '/page16': Page16,
+    '/page17': Page17,
     '/test': Test
   };
 
@@ -89,7 +91,7 @@
   // --- Navigation clavier ---
   const pageOrder = [
     '/', '/page2','/page3','/page4','/page5','/page6','/page7','/page8',
-    '/page9','/page10','/page11','/page12','/page13','/page14','/page15','/page16'
+    '/page9','/page10','/page11','/page12','/page13','/page14','/page15','/page16', '/page17'
   ];
 
   function navigatePage(offset: number) {
