@@ -47,7 +47,7 @@ html, body {
 }
 
 .hide {
-  width: 80%;
+  width: 100%;
   aspect-ratio: 1 / 1; 
   background: none;          /* Enlève la couleur rose si tu veux que seule l’image apparaisse */
   border: none;
@@ -63,6 +63,7 @@ html, body {
   height: 100%;
   object-fit: contain;
 }
+
 
 .textbox {
   width: 50%;
