@@ -50,6 +50,10 @@
     transition: transform 0.3s ease;
   }
 
+  .textbox {
+    width: 30%;
+  }
+
 
 </style>
 

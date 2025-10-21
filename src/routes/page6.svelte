@@ -39,6 +39,9 @@ onMount(() => {
     z-index: 1;
     transition: transform 0.3s ease;
   }
+  .textbox {
+    width: 30%;
+  }
 
 
 </style>
