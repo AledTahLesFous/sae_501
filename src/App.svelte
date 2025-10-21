@@ -25,6 +25,8 @@
 
   import iconOn from './assets/general/1.svg';
   import iconOff from './assets/general/2.png';
+  import iconAudio from './assets/general/1.svg';
+  import iconMute from './assets/general/mute.png';
 
   const routes = {
     '/': Home,
@@ -102,7 +104,7 @@
     if (!audio) return;
 
     // Joue la musique finale après vc_16
-    audio.src = '/src/voices/song.mp3';
+    audio.src = '/public/voices/song.mp3';
     audio.loop = true; // si tu veux que la musique continue
     audio.play().catch(() => {
       console.warn('Lecture automatique bloquée, interaction requise.');
@@ -155,7 +157,7 @@
         <img src={$textboxVisible ? iconOn : iconOff} alt="Toggle textbox" />
       </button>
       <button on:click={toggleAudio} class="hide" aria-label="Toggle Audio">
-        <img src={$textboxVisible ? iconOn : iconOff} alt="Toggle textbox" />
+        <img src={!isMuted  ? iconOn : iconMute} alt="Toggle Audio" />
       </button>
     </div>
   </div>
