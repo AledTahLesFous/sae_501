@@ -1,16 +1,12 @@
 <script>
-// @ts-nocheck
-import { push } from 'svelte-spa-router';
+  
 import { onMount } from 'svelte';
 import { textboxVisible } from '../stores.js';
 import backgroundImage from '../backgrounds/page15/bg_15.png';
 
-let currentBg = backgroundImage;
 let currentBeamIndex = 0;
 let currentBeamIndex2 = 0;
 let currentBeamIndex3 = 0;
-let currentBeamIndex4 = 0;
-
 
 const beamFrames = [
   { angle: 27, intensity: 0.45, offsetX: 500 },
@@ -27,9 +23,6 @@ const beamFrames3 = [
   { angle: 15, intensity: 0.35, offsetX: 5 },
 ];
 
-
-
-
 onMount(() => {
   const interval = setInterval(() => {
     currentBeamIndex = (currentBeamIndex + 1) % beamFrames.length;
@@ -43,28 +36,15 @@ onMount(() => {
     currentBeamIndex3 = (currentBeamIndex3 + 1) % beamFrames3.length;
   }, 2200);
 
-  const interval4 = setInterval(() => {
-    currentBeamIndex4 = (currentBeamIndex4 + 1) % beamFrames4.length;
-  }, 1375);
-  return () => clearInterval(interval, interval2, interval3, interval4);
+  // @ts-ignore
+  return () => clearInterval(interval, interval2, interval3);
+
+
 });
+
 </script>
 
 <style>
-.women {
-  position: absolute;
-  width: 25%;
-  height: 75%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform-origin: center center;
-  z-index: 1;
-}
-
-.women:hover {
-  transform: scale(1.02);
-}
 
 /* --- Rayon de lumière --- */
 .light-beam {
@@ -83,8 +63,6 @@ onMount(() => {
   );
   filter: blur(40px) brightness(1.4);
   opacity: 0.8;
-  /* ⚠️ Pas de transition => frame cut net */
-  transition: none;
 }
 
 .fullscreen-background {
@@ -96,6 +74,7 @@ onMount(() => {
   left: 0;
   z-index: 0;
 }
+
 </style>
 
 <main>
@@ -132,8 +111,6 @@ onMount(() => {
                    rotate({beamFrames3[currentBeamIndex3].angle}deg);
       "
     ></div>
-
-
 
     {#if $textboxVisible}
       <div class="textbox">

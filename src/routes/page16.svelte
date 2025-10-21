@@ -1,27 +1,7 @@
 <script>
-// @ts-nocheck
-
-  import { push } from 'svelte-spa-router';
-
-  import { onMount } from 'svelte';
 
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page16/bg_16.png';
-
-  let currentBg = backgroundImage;
-
-  onMount(() => {
-    const images = [backgroundImage];
-    let index = 0;
-
-    const interval = setInterval(() => {
-      index = (index + 1) % images.length; 
-      currentBg = images[index];
-    }, 700);
-
-    return () => clearInterval(interval);
-  });
-
 
 </script>
 
@@ -39,26 +19,10 @@
     align-items: center; 
   }
 
-  .women {
-    position: absolute;
-    width: 25%;
-    height: 75%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform-origin: center center;
-    z-index: 1;
-    transition: transform 0.3s ease;
+  .textbox {
+    width: 70%;
   }
-
-  .women:hover {
-    transform: scale(1.02);
-  }
-
-
-.textbox {
-  width: 70%;
-}
+  
 </style>
 
 

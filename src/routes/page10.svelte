@@ -1,10 +1,7 @@
 <script>
-// @ts-nocheck
+
   import { push } from 'svelte-spa-router';
-
-
   import { onMount } from 'svelte';
-
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page10/bg_10.avif';
   import servanteImage from '../assets/page10/servante.avif';
@@ -23,8 +20,7 @@
     return () => clearInterval(interval);
   });
 
-  
-    function goToPage11() {
+  function goToPage11() {
     push('/page11');
   }
 
@@ -70,7 +66,7 @@
     <div class="container-flex">
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-  <img src={servanteImage} alt="servanteImage" class="women" on:click={goToPage11}/>
+    <img src={servanteImage} alt="servanteImage" class="women" on:click={goToPage11}/>
     </div>
 
     {#if $textboxVisible}

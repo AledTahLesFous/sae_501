@@ -1,7 +1,5 @@
 <script>
-// @ts-nocheck
-
-
+  
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page5/bg_5.avif';
   import womanImage from '../assets/page5/pov.avif'
@@ -21,8 +19,6 @@
       window.location.hash = '#/page6';
     }
   }
-
-
 
 </script>
 
@@ -54,7 +50,6 @@
     width: 30%;
   }
 
-
 </style>
 
 
@@ -68,7 +63,6 @@
     <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
     <img src={currentImg} alt="currentImg" class="women" on:click={Action}/>
     </div>
-
 
     {#if $textboxVisible}
     <div class="textbox">elle en arrachait des poignées tout entières qu'elle jetait à terre auprès d'elle.</div>

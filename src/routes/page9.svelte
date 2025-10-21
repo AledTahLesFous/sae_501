@@ -1,4 +1,5 @@
 <script>
+
   import { onMount } from 'svelte';
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page9/bg_9.avif';
@@ -17,10 +18,10 @@
 
     return () => clearInterval(interval);
   });
+
 </script>
 
 <style>
-
 
   .hitbox {
     width: 35%;
@@ -29,12 +30,13 @@
     top: 0;
     left: 30%;
   }
+
 </style>
 
 <main>
   <div class="container">
     <!-- Background -->
-      <img src={currentImg} alt="Background" class="fullscreen-background" />
+    <img src={currentImg} alt="Background" class="fullscreen-background" />
 
     <!-- Zone cliquable -->
     <a 

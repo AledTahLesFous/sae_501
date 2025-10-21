@@ -1,7 +1,6 @@
 <script>
-  import { onMount } from 'svelte';
 
-// @ts-nocheck
+  import { onMount } from 'svelte';
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page5/bg_5.avif';
   import womanImage from '../assets/page6/pov.avif'
@@ -17,6 +16,7 @@ onMount(() => {
 </script>
 
 <style>
+
   .container-flex {
     display: flex;
     width: 100%;
@@ -43,7 +43,6 @@ onMount(() => {
     width: 30%;
   }
 
-
 </style>
 
 
@@ -57,7 +56,6 @@ onMount(() => {
     <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
     <img src={womanImage} alt="womanImage" class="women"/>
     </div>
-
 
     {#if $textboxVisible}
     <div class="textbox">elle en arrachait des poignées tout entières qu'elle jetait à terre auprès d'elle.</div>

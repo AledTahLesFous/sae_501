@@ -1,10 +1,7 @@
 <script>
-// @ts-nocheck
 
   import { push } from 'svelte-spa-router';
-
   import { onMount } from 'svelte';
-
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page11/bg_11.png';
   import servanteImage from '../assets/page11/servante.png';
@@ -22,9 +19,8 @@
 
     return () => clearInterval(interval);
   });
-
   
-    function goToPage12() {
+  function goToPage12() {
     push('/page12');
   }
 

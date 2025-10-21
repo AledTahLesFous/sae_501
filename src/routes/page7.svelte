@@ -1,15 +1,10 @@
 <script>
-// @ts-nocheck
 
   import { push } from 'svelte-spa-router';
-
-
   import { onMount } from 'svelte';
   import { textboxVisible } from '../stores.js';
-
   import backgroundImage from '../backgrounds/page7/bg_7.avif';
   import backgroundImage2 from '../backgrounds/page7/bg_7_f2.avif';
-
   import servanteImage from '../assets/page7/servante.avif';
   import porteImage from '../assets/page7/porte.avif';
   import porteImage2 from '../assets/page7/porte_f2.avif';
@@ -43,6 +38,7 @@
     function goToPage8() {
     push('/page8');
   }
+
 </script>
 
 <style>
@@ -55,19 +51,15 @@
     justify-content: end;
     align-items: center; 
     position: absolute;
-
     opacity: 0; /* invisible au départ */
     transition: opacity 0.5s ease; /* transition fluide */
-
     pointer-events: none;
-
   }
 
-  /* Classe pour rendre visible */
-.container-flex.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
+  .container-flex.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
   .women {
     position: absolute;
@@ -80,7 +72,6 @@
     z-index: 1;
     transition: transform 0.3s ease;
   }
-
 
   .women:hover {
     transform: scale(1.02);
@@ -110,15 +101,13 @@
 <main>
   <div class="container">
     <!-- Background -->
-      <img src={currentBg} alt="Background" class="fullscreen-background" />
+    <img src={currentBg} alt="Background" class="fullscreen-background" />
 
-<div class="container-flex {servanteVisible ? 'visible' : ''}">
-  <!-- svelte-ignore a11y_click_events_have_key_events -->
-  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-  <img src={servanteImage} alt="servanteImage" class="women" on:click={goToPage8}/>
-</div>
-
-
+    <div class="container-flex {servanteVisible ? 'visible' : ''}">
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
+      <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+      <img src={servanteImage} alt="servanteImage" class="women" on:click={goToPage8}/>
+    </div>
 
     <!-- Porte -->
     <!-- svelte-ignore a11y_click_events_have_key_events -->
