@@ -59,6 +59,11 @@
     transform: scale(1.02);
   }
 
+
+.textbox {
+  width: 38%;
+
+}
 </style>
 
 
