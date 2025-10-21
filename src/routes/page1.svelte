@@ -87,7 +87,7 @@
 
   {#if $textboxVisible}
     <div class="textbox">
-      Il était une fois une jeune fille jolie, mais négligente et paresseuse.
+      Il y avait une fois une jeune fille qui était jolie, mais négligente et paresseuse.
     </div>
   {/if}
 

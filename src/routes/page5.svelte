@@ -67,7 +67,7 @@
 
 
     {#if $textboxVisible}
-    <div class="textbox">Elle en arrachait des poignées tout entières qu’elle jetait à terre, auprès d’elle.</div>
+    <div class="textbox">elle en arrachait des poignées tout entières qu'elle jetait à terre auprès d'elle.</div>
     {/if}
 
   </div>

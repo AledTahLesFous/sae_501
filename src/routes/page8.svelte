@@ -60,7 +60,7 @@
     ></a>
 
     {#if $textboxVisible}
-    <div class="textbox">Ramassait tous ces brins de filasse</div>
+    <div class="textbox">ramassait tous ces brins de filasse,</div>
     {/if}
 
   </div>

@@ -27,6 +27,9 @@
     push('/page12');
   }
 
+    export let angle = 35; // angle du faisceau
+  export let intensity = 0.6; // opacité globale
+
 </script>
 
 
@@ -59,6 +62,39 @@
     transform: scale(1.02);
   }
 
+.light-beam {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  transform: translateX(-50%) rotate(var(--angle));
+  background: 
+    conic-gradient(
+      from 180deg at 50% 0%, 
+      rgba(255,255,210,0.0) 0deg,
+      rgba(255,255,240,var(--intensity)) 10deg,
+      rgba(255,255,240,0.0) 25deg
+    );
+  filter: blur(40px) brightness(1.4);
+  mix-blend-mode: screen;
+  opacity: 0.7;
+  animation: beamMove 5s ease-in-out infinite alternate;
+}
+
+@keyframes beamMove {
+  0% {
+    transform: translateX(-50%) rotate(calc(var(--angle) - 3deg)) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(-50%) rotate(calc(var(--angle) + 3deg)) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+
 </style>
 
 
@@ -71,8 +107,11 @@
   <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
     </div>
 
+
+<div class="light-beam" style="--angle: {angle}deg; --intensity: {intensity};"></div>
+
     {#if $textboxVisible}
-    <div class="textbox">Le soir avant ce grand jour, l’active servante dansait gaiement avec sa robe neuve</div>
+    <div class="textbox">Le soir avant ce grand jour, l'active servante dansait gaiement avec sa robe neuve;</div>
     {/if}
 
   </div>

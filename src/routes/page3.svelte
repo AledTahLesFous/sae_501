@@ -4,7 +4,7 @@
   import backgroundImage2 from '../backgrounds/page3/bg_3_f2.avif';
 
   let currentBg = backgroundImage;
-  let currentText = "Elle s’en acquittait avec tant d’ennui";
+  let currentText = "elle s'en acquittait avec tant d'ennui,";
 
   // Quand on clique sur la hitbox
   function handleClick() {

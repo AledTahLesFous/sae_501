@@ -22,10 +22,6 @@
     return () => clearInterval(interval);
   });
 
-  
-    function goToPage12() {
-    push('/page12');
-  }
 
 </script>
 
@@ -72,7 +68,7 @@
     </div>
 
     {#if $textboxVisible}
-    <div class="textbox">La future se mit à chanter : “La fillette se fait gloire des restes de mon fuseau.</div>
+    <div class="textbox">la future se mit à chanter : “La fillette se fait gloire des restes de mon fuseau."</div>
     {/if}
 
   </div>

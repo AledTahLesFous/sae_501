@@ -72,7 +72,7 @@
     </div>
 
     {#if $textboxVisible}
-    <div class="textbox">Et la noce allait se faire</div>
+    <div class="textbox">et la noce allait se faire.</div>
     {/if}
 
   </div>

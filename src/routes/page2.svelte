@@ -99,7 +99,7 @@
       <img src={currentBg} alt="Background" class="fullscreen-background" />
     <!-- Texte -->
        {#if $textboxVisible}
-    <div class="textbox">Quand on l’obligeait de filer</div>
+    <div class="textbox">Quand on l'obligeait de filer,</div>
   {/if}
     <!-- Spinner -->
     {#if spinnerVisible}

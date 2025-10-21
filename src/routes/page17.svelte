@@ -22,11 +22,6 @@
     return () => clearInterval(interval);
   });
 
-  
-    function goToPage12() {
-    push('/page12');
-  }
-
 </script>
 
 
@@ -72,7 +67,7 @@
     </div>
 
     {#if $textboxVisible}
-    <div class="textbox">Le fiancé lui demanda ce qu’elle voulait dire.</div>
+    <div class="textbox">Le fiancé lui demanda ce qu'elle voulait dire;</div>
     {/if}
 
   </div>

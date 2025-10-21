@@ -44,7 +44,7 @@
     ></a>
 
     {#if $textboxVisible}
-      <div class="textbox">Les nettoyait</div>
+      <div class="textbox">les nettoyait,</div>
     {/if}
   </div>
 </main>
