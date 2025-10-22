@@ -16,10 +16,7 @@
       console.warn('Impossible de jouer l’audio avant interaction utilisateur');
     });
 
-    // Après 2 secondes, redirige vers /page4
-    setTimeout(() => {
-      window.location.hash = "#/page4";
-    }, 2000);
+
   }
 </script>
 

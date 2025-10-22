@@ -2,18 +2,19 @@
   import { onMount } from 'svelte';
 
   import { textboxVisible } from '../stores.js';
-  import backgroundImage from '../backgrounds/page2/bg_2.avif';
+  import backgroundImage from '../backgrounds/page2/bg_2.png';
+  import backgroundImage2 from '../backgrounds/page2/bg_2_f2.png';
 
   let currentBg = backgroundImage;
 
   onMount(() => {
-    const images = [backgroundImage];
+    const images = [backgroundImage, backgroundImage2];
     let index = 0;
 
     const interval = setInterval(() => {
       index = (index + 1) % images.length; 
       currentBg = images[index];
-    }, 700);
+    }, 300);
 
     return () => clearInterval(interval);
   });
@@ -51,7 +52,7 @@
         rotationsCount += Math.floor(Math.abs(rotation) / 360);
         rotation = rotation % 360;
 
-        if (rotationsCount >= 6) {
+        if (rotationsCount >= 3) {
           spinnerVisible = false;
             setTimeout(() => {
             window.location.hash = '#/page3';

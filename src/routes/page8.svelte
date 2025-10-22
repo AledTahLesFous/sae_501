@@ -4,16 +4,17 @@
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page8/bg_8.avif';
   import servanteImage from '../assets/page8/servante.avif';
+  import servanteImage2 from '../assets/page8/femme.png';
 
-  let currentBg = backgroundImage;
+  let currentServante = servanteImage;
 
   onMount(() => {
-    const images = [backgroundImage];
+    const images = [servanteImage, servanteImage2];
     let index = 0;
 
     const interval = setInterval(() => {
       index = (index + 1) % images.length; 
-      currentBg = images[index];
+      currentServante = images[index];
     }, 700);
 
     return () => clearInterval(interval);
@@ -54,7 +55,7 @@
   <a 
       href="#/page9"
       class="women"
-      style="background-image: url({servanteImage})"
+      style="background-image: url({currentServante})"
       aria-label="Aller à la page 9"
     ></a>
 

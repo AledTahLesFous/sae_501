@@ -1,56 +1,72 @@
 <script>
-
+  import { fade } from 'svelte/transition';
   import { push } from 'svelte-spa-router';
   import { onMount } from 'svelte';
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page12/bg_12.png';
+  import backgroundImage2 from '../backgrounds/page12/bg_12_f2.png';
 
-  let currentBg = backgroundImage;
+  let currentBg = backgroundImage2;
 
-  onMount(() => {
-    const images = [backgroundImage];
-    let index = 0;
-
-    const interval = setInterval(() => {
-      index = (index + 1) % images.length; 
-      currentBg = images[index];
-    }, 700);
-
-    return () => clearInterval(interval);
-  });
-
+  function handleClick() {
+    // Change l'image
+    currentBg = backgroundImage;
+  }
 </script>
-
 
 <style>
 
-  .container-flex {
-    display: flex;
+
+  .hitbox {
+    width: 39%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    cursor: pointer;
+    z-index: 10;
+
+  }
+
+  .fullscreen-background {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    z-index: 5;
-    background-size: cover;
-    flex-direction: column;
-    justify-content: end;
-    align-items: center; 
+    object-fit: cover;
   }
+
 
 </style>
 
-
 <main>
-  <div class="container">
-    <!-- Background -->
-    <img src={backgroundImage} alt="Background" class="fullscreen-background" />
-    <div class="container-flex">
   <!-- svelte-ignore a11y_click_events_have_key_events -->
-  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+  <div class="container">
+    <!-- Background avec transition fade -->
+    {#key currentBg}
+      <img 
+        src={currentBg} 
+        alt="Background" 
+        class="fullscreen-background"
+        transition:fade={{ duration: 400 }}
+      />
+    {/key}
+
+    <div class="container-flex">
+      <!-- Contenu si nécessaire -->
     </div>
 
-    {#if $textboxVisible}
-    <div class="textbox">et elle s'en fit faire une jolie robe.</div>
-    {/if}
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <div
+      class="hitbox"
+      on:click={handleClick}
+      aria-label="Changer de vetements"
+    ></div>
 
+    {#if $textboxVisible}
+      <div class="textbox">et elle s'en fit faire une jolie robe.</div>
+    {/if}
   </div>
 </main>
-
