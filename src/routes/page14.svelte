@@ -4,20 +4,26 @@
   import { onMount } from 'svelte';
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page14/bg_14.png';
+  import backgroundImage2 from '../backgrounds/page14/bg_14_f2.png';
+  import backgroundImage3 from '../backgrounds/page14/bg_14_f3.png';
 
-  let currentBg = backgroundImage;
+  const images = [ backgroundImage2, backgroundImage3];
 
-  onMount(() => {
-    const images = [backgroundImage];
-    let index = 0;
 
-    const interval = setInterval(() => {
-      index = (index + 1) % images.length; 
-      currentBg = images[index];
-    }, 700);
+  let currentBg = images[0];
+  let clickCount = 0;
 
-    return () => clearInterval(interval);
-  });
+function handleClick() {
+    clickCount++;
+
+    // alterne entre les deux images
+    currentBg = images[clickCount % 2];
+
+    // au 8e clic → passage à la page 15
+    if (clickCount >= 8) {
+      push('/page15');
+    }
+  }
 
 </script>
 
@@ -39,12 +45,13 @@
 
 
 <main>
-  <div class="container">
-    <!-- Background -->
-    <img src={backgroundImage} alt="Background" class="fullscreen-background" />
-    <div class="container-flex">
   <!-- svelte-ignore a11y_click_events_have_key_events -->
-  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
+  <div class="container" on:click={handleClick}>
+    <!-- Background -->
+    <img src={currentBg} alt="Background" class="fullscreen-background" />
+    <div class="container-flex">
+
     </div>
 
     {#if $textboxVisible}

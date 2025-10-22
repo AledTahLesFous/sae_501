@@ -1,15 +1,15 @@
 <script>
+
   import { onMount } from 'svelte';
-
+  import { push } from 'svelte-spa-router';
   import { textboxVisible } from '../stores.js';
-
 
   import backgroundImage from '../backgrounds/page1/bg_1.avif';
   import backgroundImage2 from '../backgrounds/page1/bg_1_f2.avif';
   import backgroundImage3 from '../backgrounds/page1/bg_1_f3.avif';
 
   import womanImage from '../assets/page1/femme.avif';
-  import rouetImage from '../assets/page1/rouet.avif';
+  import rouetImage from '../assets/page1/rouet.png';
 
   let currentBg = backgroundImage;
 
@@ -24,6 +24,11 @@
 
     return () => clearInterval(interval);
   });
+
+    function handleClick() {
+      push('/page2');
+
+  }
 </script>
 
 <style>
@@ -54,7 +59,7 @@
   background-size: contain;
   background-position: center;
   transform-origin: center center;
-  transform: scale(0.6);
+  transform: scale(0.67);
   z-index: 1;
   position: absolute;
   top: 20%;
@@ -64,7 +69,7 @@
 }
 
 .rouet:hover {
-  transform: scale(0.66);
+  transform: scale(0.7);
 }
 
 </style>
@@ -75,7 +80,10 @@
       <img src={currentBg} alt="Background" class="fullscreen-background" />
 
     <!-- Personnage féminin -->
-    <div class="women" style="background-image: url({womanImage})"></div>
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <div class="women" style="background-image: url({womanImage})" on:click={handleClick}
+      aria-label="Aller à la page 2"></div>
 
     <!-- Rouet -->
     <a 
