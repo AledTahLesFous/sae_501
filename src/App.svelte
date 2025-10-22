@@ -19,6 +19,8 @@
   import Page16 from './routes/page16.svelte';
   import Page17 from './routes/page17.svelte';
   import Page18 from './routes/page18.svelte';
+  import Page19 from './routes/page19.svelte';
+  import Page20 from './routes/page20.svelte';
   import Home from './routes/home.svelte';
   import Test from './routes/test.svelte';
   import { textboxVisible } from './stores.js';
@@ -48,6 +50,8 @@
     '/page16': Page16,
     '/page17': Page17,
     '/page18': Page18,
+    '/page19': Page19,
+    '/page20': Page20,
     '/test': Test
   };
 
@@ -115,7 +119,7 @@
   const pageOrder = [
     '/', '/page1', '/page2', '/page3', '/page4', '/page5', '/page6', '/page7',
     '/page8', '/page9', '/page10', '/page11', '/page12', '/page13', '/page14',
-    '/page15', '/page16', '/page17', '/page18'
+    '/page15', '/page16', '/page17', '/page18', '/page19', '/page20'
   ];
 
   function navigatePage(offset: number) {
