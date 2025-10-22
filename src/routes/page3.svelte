@@ -4,13 +4,11 @@
   import backgroundImage2 from '../backgrounds/page3/bg_3_f2.avif';
 
   let currentBg = backgroundImage;
-  let currentText = "elle s'en acquittait avec tant d'ennui,";
 
   // Quand on clique sur la hitbox
   function handleClick() {
     // Change l'image et le texte
     currentBg = backgroundImage2;
-    currentText = "Hmpf";
 
     // Jouer le son vc_3_2
     const audio = new Audio('/src/voices/vc_3_2.mp3');
@@ -53,7 +51,7 @@
 
     <!-- Texte -->
     {#if $textboxVisible}
-      <div class="textbox2">{currentText}</div>
+      <div class="textbox2">elle s'en acquittait avec tant d'ennui,</div>
     {/if}
   </div>
 </main>
