@@ -5,16 +5,17 @@
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page10/bg_10.avif';
   import servanteImage from '../assets/page10/servante.avif';
+  import servanteImage2 from '../assets/page10/servante2.png';
 
-  let currentBg = backgroundImage;
+  let currentServante = servanteImage;
 
   onMount(() => {
-    const images = [backgroundImage];
+    const images = [servanteImage, servanteImage2];
     let index = 0;
 
     const interval = setInterval(() => {
       index = (index + 1) % images.length; 
-      currentBg = images[index];
+      currentServante = images[index];
     }, 700);
 
     return () => clearInterval(interval);
@@ -66,7 +67,7 @@
     <div class="container-flex">
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-    <img src={servanteImage} alt="servanteImage" class="women" on:click={goToPage11}/>
+    <img src={currentServante} alt="servanteImage" class="women" on:click={goToPage11}/>
     </div>
 
     {#if $textboxVisible}
