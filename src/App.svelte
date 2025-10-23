@@ -57,7 +57,7 @@
   };
 
   let isMuted = true;
-  let isHelp = true;
+  let isHelp = false;
   let audioInitialized = false;
   let currentPath = '/'; // pour savoir où on est
 
