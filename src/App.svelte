@@ -21,7 +21,7 @@
   import Page18 from './routes/page18.svelte';
   import Page19 from './routes/page19.svelte';
   import Page20 from './routes/page20.svelte';
-  import manuelImage from './assets/general/manuel.png'; // 🆕 import du manuel
+  import manuelImage from './assets/general/manual.avif';
 
   import Home from './routes/home.svelte';
   import { textboxVisible } from './stores.js';
@@ -83,7 +83,7 @@
   }
 
   function toggleHelp() {
-    isHelp = !isHelp; // 🆕 toggle du manuel
+    isHelp = !isHelp; 
   }
 
 
