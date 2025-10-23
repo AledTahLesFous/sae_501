@@ -14,6 +14,11 @@
 function handleClick() {
     clickCount++;
 
+      const audio = new Audio(`${import.meta.env.BASE_URL}voices/toc.mp3`);
+  audio.play().catch(() => {
+    console.warn('Lecture automatique bloquée, interaction requise.');
+  });
+
     // alterne entre les deux images
     currentBg = images[clickCount % 2];
 
