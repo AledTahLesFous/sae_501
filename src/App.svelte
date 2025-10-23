@@ -193,8 +193,7 @@ function handleAudioEnd() {
     <button class="nav-btn next" on:click={() => navigatePage(1)} aria-label="Page suivante">›</button>
   </div>
 
-{/if}
-
+  
 <!-- 🆕 Overlay manuel -->
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -204,6 +203,9 @@ function handleAudioEnd() {
     <img src={manuelImage} alt="Manuel d'aide" class="manuel-image" />
   </div>
 {/if}
+
+{/if}
+
 
 <audio id="bg-audio">
   Ton navigateur ne supporte pas l'audio HTML5.
