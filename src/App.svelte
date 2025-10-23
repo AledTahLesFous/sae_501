@@ -88,7 +88,7 @@
     const match = path.match(/page(\d+)/);
     if (match) pageNumber = parseInt(match[1]);
 
-    audio.src = `/voices/vc_${pageNumber}.mp3`;
+    audio.src = `${import.meta.env.BASE_URL}voices/vc_${pageNumber}.mp3`;
 
     if (!isMuted) {
       audio.play().catch(() => {

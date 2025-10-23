@@ -11,7 +11,7 @@
     currentBg = backgroundImage2;
 
     // Jouer le son vc_3_2
-    const audio = new Audio('/voices/vc_3_2.mp3');
+    const audio = new Audio(`${import.meta.env.BASE_URL}voices/vc_3_2.mp3`);
     audio.play().catch(err => {
       console.warn('Impossible de jouer l’audio avant interaction utilisateur');
     });
