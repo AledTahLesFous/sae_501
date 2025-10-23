@@ -187,6 +187,12 @@ function handleAudioEnd() {
       </button>
     </div>
   </div>
+
+   <div class="tablet-nav">
+    <button class="nav-btn prev" on:click={() => navigatePage(-1)} aria-label="Page précédente">‹</button>
+    <button class="nav-btn next" on:click={() => navigatePage(1)} aria-label="Page suivante">›</button>
+  </div>
+
 {/if}
 
 <!-- 🆕 Overlay manuel -->

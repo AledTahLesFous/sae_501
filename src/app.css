@@ -127,3 +127,46 @@ font-style: normal;
   object-fit: contain;
   border-radius: 12px;
 }
+
+/* 🆕 Boutons tablette */
+.tablet-nav {
+  display: none;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet-nav {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 85%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    pointer-events: none; /* éviter de bloquer le reste */
+  }
+
+  .nav-btn {
+    pointer-events: auto; /* permettre les clics sur les boutons */
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: white;
+    font-size: 3rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .nav-btn.prev {
+    margin-left: 0.5rem;
+  }
+
+  .nav-btn.next {
+    margin-right: 0.5rem;
+  }
+}
