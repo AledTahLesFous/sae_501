@@ -1,10 +1,9 @@
 <script>
 
-  import { push } from 'svelte-spa-router';
   import { onMount } from 'svelte';
   import { textboxVisible } from '../stores.js';
-  import backgroundImage from '../backgrounds/page18/bg_18.png';
-  import backgroundImage2 from '../backgrounds/page18/bg_18_f2.png';
+  import backgroundImage from '../backgrounds/page18/bg_18.avif';
+  import backgroundImage2 from '../backgrounds/page18/bg_18_f2.avif';
 
   let currentBg = backgroundImage;
 

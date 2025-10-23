@@ -3,9 +3,9 @@
   import { push } from 'svelte-spa-router';
   import { onMount } from 'svelte';
   import { textboxVisible } from '../stores.js';
-  import backgroundImage from '../backgrounds/page11/bg_11.png';
-  import servanteImage from '../assets/page11/servante.png';
-  import servanteImage2 from '../assets/page11/servante2.png';
+  import backgroundImage from '../backgrounds/page11/bg_11.avif';
+  import servanteImage from '../assets/page11/servante.avif';
+  import servanteImage2 from '../assets/page11/servante2.avif';
 
   let currentServante = servanteImage;
 

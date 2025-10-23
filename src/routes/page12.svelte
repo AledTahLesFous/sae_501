@@ -1,16 +1,22 @@
 <script>
   import { fade } from 'svelte/transition';
   import { push } from 'svelte-spa-router';
-  import { onMount } from 'svelte';
   import { textboxVisible } from '../stores.js';
-  import backgroundImage from '../backgrounds/page12/bg_12.png';
-  import backgroundImage2 from '../backgrounds/page12/bg_12_f2.png';
+  import backgroundImage from '../backgrounds/page12/bg_12.avif';
+  import backgroundImage2 from '../backgrounds/page12/bg_12_f2.avif';
 
   let currentBg = backgroundImage2;
 
   function handleClick() {
-    // Change l'image
-    currentBg = backgroundImage;
+    if (currentBg == backgroundImage) {
+
+      push('/page13');
+
+    } else {
+      currentBg = backgroundImage;
+
+    }
+    
   }
 </script>
 

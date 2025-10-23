@@ -5,7 +5,7 @@
   import { textboxVisible } from '../stores.js';
   import backgroundImage from '../backgrounds/page10/bg_10.avif';
   import servanteImage from '../assets/page10/servante.avif';
-  import servanteImage2 from '../assets/page10/servante2.png';
+  import servanteImage2 from '../assets/page10/servante2.avif';
 
   let currentServante = servanteImage;
 

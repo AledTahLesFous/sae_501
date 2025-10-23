@@ -2,7 +2,7 @@
   
 import { onMount } from 'svelte';
 import { textboxVisible } from '../stores.js';
-import backgroundImage from '../backgrounds/page15/bg_15.png';
+import backgroundImage from '../backgrounds/page15/bg_15.avif';
 
 let currentBeamIndex = 0;
 let currentBeamIndex2 = 0;

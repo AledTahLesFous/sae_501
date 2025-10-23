@@ -1,10 +1,9 @@
 <script>
-  import { push } from 'svelte-spa-router';
   import { onMount } from 'svelte';
   import { textboxVisible } from '../stores.js';
   import { fade } from 'svelte/transition';
-  import backgroundImage from '../backgrounds/page13/bg_13.png';
-  import BoxImage from '../assets/page13/box.png';
+  import backgroundImage from '../backgrounds/page13/bg_13.avif';
+  import BoxImage from '../assets/page13/box.avif';
 
   let currentBg = backgroundImage;
   let boxVisible = true; // contrôle la visibilité de la boîte

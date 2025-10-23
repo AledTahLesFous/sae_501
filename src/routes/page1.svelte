@@ -9,7 +9,7 @@
   import backgroundImage3 from '../backgrounds/page1/bg_1_f3.avif';
 
   import womanImage from '../assets/page1/femme.avif';
-  import rouetImage from '../assets/page1/rouet.png';
+  import rouetImage from '../assets/page1/rouet.avif';
 
   let currentBg = backgroundImage;
 

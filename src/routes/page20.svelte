@@ -3,7 +3,7 @@
   import { push } from 'svelte-spa-router';
   import { onMount } from 'svelte';
   import { textboxVisible } from '../stores.js';
-  import backgroundImage from '../backgrounds/page20/bg_20.png';
+  import backgroundImage from '../backgrounds/page20/bg_20.avif';
 
 </script>
 
