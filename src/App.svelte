@@ -26,10 +26,11 @@
   import Home from './routes/home.svelte';
   import { textboxVisible } from './stores.js';
 
-  import iconOn from './assets/general/1.svg';
-  import iconOff from './assets/general/2.png';
-  import iconAudio from './assets/general/1.svg';
-  import iconMute from './assets/general/mute.png';
+  import iconAudioOn from './assets/general/audio.png';
+  import iconAudioOff from './assets/general/mute.png';
+  import iconText from './assets/general/text2.png';
+  import iconTextOff from './assets/general/text.png';
+  import iconHelp from './assets/general/info.png';
 
   const routes = {
     '/': Home,
@@ -176,13 +177,13 @@ function handleAudioEnd() {
   <div class="bt-container">
     <div class="bt">
       <button on:click={toggleTextbox} class="hide" aria-label="Toggle Textbox">
-        <img src={$textboxVisible ? iconOn : iconOff} alt="Toggle textbox" />
+        <img src={$textboxVisible ? iconText : iconTextOff} alt="Toggle textbox" />
       </button>
       <button on:click={toggleAudio} class="hide" aria-label="Toggle Audio">
-        <img src={!isMuted  ? iconOn : iconMute} alt="Toggle Audio" />
+        <img src={!isMuted  ? iconAudioOn : iconAudioOff} alt="Toggle Audio" />
       </button>
       <button on:click={toggleHelp} class="hide" aria-label="Toggle Help">
-        <img src={!isHelp  ? iconOn : iconMute} alt="Toggle Help" />
+        <img src={!isHelp  ? iconHelp : iconHelp} alt="Toggle Help" />
       </button>
     </div>
   </div>
