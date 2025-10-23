@@ -106,7 +106,7 @@
     if (!audio) return;
 
     // Joue la musique finale après vc_16
-    audio.src = '/public  /voices/song.mp3';
+    audio.src = `${import.meta.env.BASE_URL}voices/song.mp3`;
     audio.loop = true; // si tu veux que la musique continue
     audio.play().catch(() => {
       console.warn('Lecture automatique bloquée, interaction requise.');
