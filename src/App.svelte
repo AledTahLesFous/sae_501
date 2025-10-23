@@ -21,6 +21,8 @@
   import Page18 from './routes/page18.svelte';
   import Page19 from './routes/page19.svelte';
   import Page20 from './routes/page20.svelte';
+  import manuelImage from './assets/general/manuel.png'; // 🆕 import du manuel
+
   import Home from './routes/home.svelte';
   import { textboxVisible } from './stores.js';
 
@@ -54,6 +56,7 @@
   };
 
   let isMuted = true;
+  let isHelp = true;
   let audioInitialized = false;
   let currentPath = '/'; // pour savoir où on est
 
@@ -78,6 +81,11 @@
     }
     isMuted = !isMuted;
   }
+
+  function toggleHelp() {
+    isHelp = !isHelp; // 🆕 toggle du manuel
+  }
+
 
   // --- Gestion audio ---
   function playPageAudio(path: string) {
@@ -173,7 +181,20 @@ function handleAudioEnd() {
       <button on:click={toggleAudio} class="hide" aria-label="Toggle Audio">
         <img src={!isMuted  ? iconOn : iconMute} alt="Toggle Audio" />
       </button>
+      <button on:click={toggleHelp} class="hide" aria-label="Toggle Help">
+        <img src={!isHelp  ? iconOn : iconMute} alt="Toggle Help" />
+      </button>
     </div>
+  </div>
+{/if}
+
+<!-- 🆕 Overlay manuel -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+{#if isHelp}
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <div class="help-overlay" on:click={toggleHelp}>
+    <img src={manuelImage} alt="Manuel d'aide" class="manuel-image" />
   </div>
 {/if}
 
