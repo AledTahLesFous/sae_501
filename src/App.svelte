@@ -26,11 +26,11 @@
   import Home from './routes/home.svelte';
   import { textboxVisible } from './stores.js';
 
-  import iconAudioOn from './assets/general/audio.png';
-  import iconAudioOff from './assets/general/mute.png';
-  import iconText from './assets/general/text2.png';
-  import iconTextOff from './assets/general/text.png';
-  import iconHelp from './assets/general/info.png';
+  import iconAudioOn from './assets/general/audio.avif';
+  import iconAudioOff from './assets/general/mute.avif';
+  import iconText from './assets/general/text2.avif';
+  import iconTextOff from './assets/general/text.avif';
+  import iconHelp from './assets/general/info.avif';
 
   const routes = {
     '/': Home,
