@@ -101,17 +101,29 @@
     }
   }
 
-  function handleAudioEnd() {
-    const audio = document.getElementById('bg-audio') as HTMLAudioElement | null;
-    if (!audio) return;
+function handleAudioEnd() {
+  const audio = document.getElementById('bg-audio') as HTMLAudioElement | null;
+  if (!audio) return;
 
-    // Joue la musique finale après vc_16
-    audio.src = `${import.meta.env.BASE_URL}voices/song.mp3`;
-    audio.loop = true; // si tu veux que la musique continue
-    audio.play().catch(() => {
-      console.warn('Lecture automatique bloquée, interaction requise.');
-    });
-  }
+  // Assure-toi de stopper le son actuel avant de changer la source
+  audio.pause();
+
+  // Met à jour la source avec le chemin dynamique (compatible GitHub Pages)
+  audio.src = `${import.meta.env.BASE_URL}voices/song.mp3`;
+
+  // Prépare la lecture avant le play pour réduire la latence
+  audio.preload = 'auto';
+  audio.load();
+
+  // Active la boucle si tu veux une musique d’ambiance continue
+  audio.loop = true;
+
+  // Lance la lecture (bloquée par défaut si pas d’interaction)
+  audio.play().catch(() => {
+    console.warn('Lecture automatique bloquée — une interaction utilisateur est nécessaire.');
+  });
+}
+
 
   // --- Navigation clavier ---
   const pageOrder = [
