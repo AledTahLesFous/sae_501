@@ -22,7 +22,6 @@
   import Page19 from './routes/page19.svelte';
   import Page20 from './routes/page20.svelte';
   import Home from './routes/home.svelte';
-  import Test from './routes/test.svelte';
   import { textboxVisible } from './stores.js';
 
   import iconOn from './assets/general/1.svg';
@@ -52,7 +51,6 @@
     '/page18': Page18,
     '/page19': Page19,
     '/page20': Page20,
-    '/test': Test
   };
 
   let isMuted = true;
