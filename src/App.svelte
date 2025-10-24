@@ -23,7 +23,6 @@
   import Page20 from './routes/page20.svelte';
   import manuelImage from './assets/general/manual.avif';
 
-  import Home from './routes/home.svelte';
   import Credits from './routes/credits.svelte';
   import { textboxVisible } from './stores.js';
 
@@ -34,7 +33,6 @@
   import iconHelp from './assets/general/info.avif';
 
   const routes = {
-    '/': Home,
     '/page1': Page1,
     '/page2': Page2,
     '/page3': Page3,
@@ -61,7 +59,7 @@
   let isMuted = true;
   let isHelp = false;
   let audioInitialized = false;
-  let currentPath = '/'; // pour savoir où on est
+  let currentPath = '/page1'; // pour savoir où on est
 
   // --- Fonctions UI ---
   function toggleTextbox() {
@@ -138,7 +136,7 @@ function handleAudioEnd() {
 
   // --- Navigation clavier ---
   const pageOrder = [
-    '/', '/page1', '/page2', '/page3', '/page4', '/page5', '/page6', '/page7',
+    '/page1', '/page2', '/page3', '/page4', '/page5', '/page6', '/page7',
     '/page8', '/page9', '/page10', '/page11', '/page12', '/page13', '/page14',
     '/page15', '/page16', '/page17', '/page18', '/page19', '/page20', '/credits'
   ];
@@ -168,6 +166,10 @@ function handleAudioEnd() {
     window.removeEventListener('keydown', handleKeydown);
   });
 
+    if (!window.location.hash || window.location.hash === '#/') {
+    window.location.hash = '/page1';
+  }
+
   // --- Suivi de la route courante ---
   function updateCurrentPath(path: string) {
     currentPath = path;
@@ -175,7 +177,7 @@ function handleAudioEnd() {
 </script>
 
 <!-- ✅ Les boutons ne s’affichent pas sur la home -->
-{#if currentPath !== '/' && currentPath !== '/credits'}
+{#if currentPath !== '/credits'}
   <div class="bt-container">
     <div class="bt">
       <button on:click={toggleTextbox} class="hide" aria-label="Toggle Textbox">
