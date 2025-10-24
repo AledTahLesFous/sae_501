@@ -85,9 +85,9 @@
     isMuted = !isMuted;
   }
 
-  function toggleHelp() {
-    isHelp = !isHelp; 
-  }
+    function toggleHelp() {
+      isHelp = !isHelp; 
+    }
 
 
   // --- Gestion audio ---
