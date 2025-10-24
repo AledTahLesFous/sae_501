@@ -1,5 +1,10 @@
 <script>
   import backgroundImage from '../backgrounds/credits/credits.avif';
+
+
+  /*
+  GITHUB PAGE WORKING
+  */
   
 </script>
 
@@ -9,3 +14,4 @@
     <img src={backgroundImage} alt="Background" class="fullscreen-background" />
   </div>
 </main>
+
