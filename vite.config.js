@@ -3,5 +3,5 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 
 export default defineConfig({
   plugins: [svelte()],
-  base: process.env.NODE_ENV === 'production' ? '/sae_505/' : '/'
+  base: process.env.NODE_ENV === 'production' ? '/sae_501/' : '/'
 })
