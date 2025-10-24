@@ -24,6 +24,7 @@
   import manuelImage from './assets/general/manual.avif';
 
   import Home from './routes/home.svelte';
+  import Credits from './routes/credits.svelte';
   import { textboxVisible } from './stores.js';
 
   import iconAudioOn from './assets/general/audio.avif';
@@ -54,6 +55,7 @@
     '/page18': Page18,
     '/page19': Page19,
     '/page20': Page20,
+    '/credits': Credits
   };
 
   let isMuted = true;
@@ -138,7 +140,7 @@ function handleAudioEnd() {
   const pageOrder = [
     '/', '/page1', '/page2', '/page3', '/page4', '/page5', '/page6', '/page7',
     '/page8', '/page9', '/page10', '/page11', '/page12', '/page13', '/page14',
-    '/page15', '/page16', '/page17', '/page18', '/page19', '/page20'
+    '/page15', '/page16', '/page17', '/page18', '/page19', '/page20', '/credits'
   ];
 
   function navigatePage(offset: number) {
@@ -173,7 +175,7 @@ function handleAudioEnd() {
 </script>
 
 <!-- ✅ Les boutons ne s’affichent pas sur la home -->
-{#if currentPath !== '/'}
+{#if currentPath !== '/' && currentPath !== '/credits'}
   <div class="bt-container">
     <div class="bt">
       <button on:click={toggleTextbox} class="hide" aria-label="Toggle Textbox">
