@@ -1,5 +1,6 @@
 # Installation
 `
-cd sae_501
+cd sae_501`
+`
 npm install
 `
